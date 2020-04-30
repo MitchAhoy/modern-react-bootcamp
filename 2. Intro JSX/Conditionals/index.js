@@ -1,18 +1,29 @@
-const getMood = () => {
-    const moods = ['angry', 'hungry', 'silly', 'quiet']
-    return moods[Math.floor(Math.random() * moods.length)]
+const getNum = () => {
+  return Math.floor(Math.random() * 10) + 1
 }
 
-class JSXDemo extends React.Component {
-    render() {
-        return (
-            <div>
-                <h1>Current mood: {getMood()}</h1>
-                <img src="https://images.unsplash.com/photo-1587982789909-8fa80a3f840b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"></img>
-            </div>
-        )
+class NumPicker extends React.Component {
+  render() {
+    const num = getNum()
+    let msg
+    if (num === 7) {
+      msg =
+        <div>
+          <img src="https://media1.giphy.com/media/6oMKugqovQnjW/200.webp?cid=ecf05e4798c39354cba17fed33b63140efb6190438543e78&rid=200.webp" />
+          <h2>YOU WIN</h2>
+        </div>
+    } else {
+      msg = <p>YOU LOSE</p>
     }
+    return (
+      <div>
+        <h1>Your number is: {num}</h1>
+        {/* <p>{num === 7 ? 'Lucky number!' : 'Unlucky'}</p> */}
+        {/* <p>{num === 7 && <img src="https://media1.giphy.com/media/6oMKugqovQnjW/200.webp?cid=ecf05e4798c39354cba17fed33b63140efb6190438543e78&rid=200.webp" />}</p> */}
+        <p>{num === 7 && msg}</p>
+      </div>
+    )
+  }
 }
 
-ReactDOM.render(<JSXDemo />, document.getElementById('root'))
-
+ReactDOM.render(<NumPicker />, document.getElementById('root'))
