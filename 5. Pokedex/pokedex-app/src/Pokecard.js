@@ -3,7 +3,6 @@ import './Pokecard.css'
 
 class Pokecard extends Component {
     render() {
-        console.log(this.props)
         return(
             <div className="Pokecard">
                 <h3 className="Pokecard-name">{this.props.name}</h3>

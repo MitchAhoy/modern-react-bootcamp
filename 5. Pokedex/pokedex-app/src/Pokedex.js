@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Pokedex.css'
 import Pokecard from './Pokecard'
-import data from './data';
+// import data from './data';
 
 
 class Pokedex extends Component {
@@ -20,9 +20,10 @@ class Pokedex extends Component {
             return  `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${idChars}.png`
         }
 
+
         return(
             <div className="Pokedex">
-            {data.map(pokemon => {
+            {this.props.player.map(pokemon => {
                 return <Pokecard 
                   name={pokemon.name}
                   imgSrc={parseImgUrl(pokemon.id)}

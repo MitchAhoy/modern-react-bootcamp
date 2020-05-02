@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="Pokedex-title">Pokedex</h1>
-      <Pokedex />
+      <Pokegame />
     </div>
   );
 }
