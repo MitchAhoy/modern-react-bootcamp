@@ -1,0 +1,17 @@
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Dog from './Dog'
+
+function App() {
+  return (
+    <div className="App">
+      <Dog/>
+      <div>
+        Not in Dog comp
+      </div>
+    </div>
+  );
+}
+
+export default App;
