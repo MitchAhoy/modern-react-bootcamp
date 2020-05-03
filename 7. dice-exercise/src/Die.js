@@ -4,14 +4,18 @@ import './Die.css'
 class Die extends Component {
     constructor(props) {
         super(props)
-        this.state = {num: 1}
+
     }
 
+    
+
     render() {
+        console.log(this.props)
         return(
-            <i className={`fas fa-dice-${this.props.num}`}></i>
+            <i className={this.props.className}></i>
         )
     }
 }
 
 export default Die
+
