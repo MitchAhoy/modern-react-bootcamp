@@ -1,12 +1,11 @@
 import React from 'react';
+import Clicker from './Clicker'
 import './App.css';
-import Pokegame from './Pokegame'
 
 function App() {
   return (
     <div className="App">
-      <h1 className="Pokedex-title">Pokedex</h1>
-      <Pokegame />
+      <Clicker/>
     </div>
   );
 }

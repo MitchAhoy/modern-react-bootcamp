@@ -1,13 +1,22 @@
 import React, { Component } from 'react'
 import Pokedex from './Pokedex'
 import data from './data'
+import './Pokegame.css'
 
 class Pokegame extends Component {
     render() {
 
         const players = {
             p1: [] ,
-            p2: []
+            p2: [],
+            calculateWinner: function(p1, p2) {
+                let p1Score = 0
+                let p2Score = 0
+                this.p1.forEach(card => p1Score += card.base_experience)
+                this.p2.forEach(card => p2Score += card.base_experience)
+                
+                return p1Score > p2Score ? true : false
+            }
         }
 
         const dealCards = () => {
@@ -23,6 +32,7 @@ class Pokegame extends Component {
             for (let i = 4; i < 8; i++) {players.p2.push(data[i])}
         }
         dealCards()
+        const result = players.calculateWinner(players.p1, players.p2)
         
 
         return(
@@ -31,10 +41,16 @@ class Pokegame extends Component {
                 <Pokedex
                 player={players.p1}
                 />
+                <p className={"Pokegame-result",  (result ? "Pokegame-winner" : "Pokegame-loser")}>
+                    {result ? 'WINNER' : 'LOSER'}
+                </p>                
                 <h3>Player 2</h3>
                 <Pokedex
                 player={players.p2}
                 />
+                <p className={"Pokegame-result", (!result ? "Pokegame-winner" : "Pokegame-loser")}>
+                    {!result ? 'WINNER' : 'LOSER'}
+                </p>  
             </div>
         )
     }

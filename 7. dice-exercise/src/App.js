@@ -1,12 +1,11 @@
 import React from 'react';
+import RollDice from './RollDice'
 import './App.css';
-import Pokegame from './Pokegame'
 
 function App() {
   return (
     <div className="App">
-      <h1 className="Pokedex-title">Pokedex</h1>
-      <Pokegame />
+      <RollDice />
     </div>
   );
 }

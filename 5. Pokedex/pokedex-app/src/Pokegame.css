@@ -1,0 +1,13 @@
+.Pokegame-result {
+    font-size: 1.5rem;
+}
+
+.Pokegame-winner {
+    color: green;
+    font-weight: 700;
+}
+
+.Pokegame-loser {
+    color: red;
+    font-weight: 700;
+}
