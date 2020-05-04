@@ -1,0 +1,24 @@
+.Lottery {
+    border: 1px #444 solid;
+    max-width: 80%;
+    margin: 2rem auto;
+    padding: 2rem
+}
+
+.Lottery-nums {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Lottery-btn {
+    background: rgb(147, 92, 211);
+    border: none;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.Lottery-btn:hover {
+    background: rgb(61, 30, 97);
+}
