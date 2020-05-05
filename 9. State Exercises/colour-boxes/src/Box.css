@@ -1,0 +1,10 @@
+.Box {
+    width: 20vw;
+    height: 20vh;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.Box:hover {
+    opacity: 0.5;
+}

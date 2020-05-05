@@ -20,11 +20,11 @@ class UpdateState extends Component {
     //     this.setState({score: this.state.score + 1})
     // }
 
-    // tripleKill() {
-    //     this.setState(st => {return {score:st.score + 1}})
-    //     this.setState(st => {return {score:st.score + 1}})
-    //     this.setState(st => {return {score:st.score + 1}})
-    // }
+    tripleKill() {
+        this.setState(st => {return {score:st.score + 1}})
+        this.setState(st => {return {score:st.score + 1}})
+        this.setState(st => {return {score:st.score + 1}})
+    }
 
     incrementScore(curState) {
         return {score: curState.score + 1}
