@@ -7,11 +7,11 @@ class ColourBoxes extends Component {
         super(props)
         this.state = {
             boxColours: this.props.boxCount.map(box => [this.randColour()])
-        
+
         }
-        
+
         this.randColour = this.randColour.bind(this)
-        // this.newColour = this.newColour.bind(this)
+        this.newColour = this.newColour.bind(this)
 
     }
 
@@ -26,21 +26,18 @@ class ColourBoxes extends Component {
     }
     newColour(oldColour) {
         const idx = this.state.boxColours.indexOf(oldColour)
-        const currColours = [...this.state.boxColours]
-        
-        this.setState(st => {return {boxColours: currColours[idx] = this.randColour()}})
-
+        const newColours = [...this.state.boxColours]
+        newColours[idx] = this.randColour()
+        this.setState(st => { return { boxColours: newColours } })
 
     }
 
-    handleClick () {
-        console.log('working')
-    }
+
 
     render() {
-        return(
+        return (
             <div className="ColourBoxes">
-                {this.state.boxColours.map( (box) => <Box colour={box} onClick={this.handleClick}/>)}
+                {this.state.boxColours.map((box) => <Box colour={box} onClick={() => this.newColour(box)} />)}
             </div>
         )
     }
