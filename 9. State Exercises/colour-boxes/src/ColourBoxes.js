@@ -6,7 +6,7 @@ class ColourBoxes extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            boxColours: this.props.boxCount.map(box => [this.randColour()])
+            boxColours: this.props.boxCount.map((box, index) => this.randColour())
 
         }
 
@@ -24,12 +24,14 @@ class ColourBoxes extends Component {
         const ranIdx = Math.floor(Math.random() * this.props.colours.length)
         return this.props.colours[ranIdx]
     }
-    newColour(oldColour) {
-        const idx = this.state.boxColours.indexOf(oldColour)
-        const newColours = [...this.state.boxColours]
-        newColours[idx] = this.randColour()
-        this.setState(st => { return { boxColours: newColours } })
-
+    newColour(oldColour, idx) {
+        const idxOldColour = this.props.colours.indexOf(oldColour)
+        const colourSelect = [...this.props.colours].splice(idxOldColour, 1)
+        const newColour = colourSelect[Math.floor(Math.random() * colourSelect.length)]
+        const newSet = [...this.state.boxColours]
+        newSet[idx] = newColour
+        this.setState(st => { return { boxColours: newSet } })
+        console.log('working')
     }
 
 
@@ -37,7 +39,7 @@ class ColourBoxes extends Component {
     render() {
         return (
             <div className="ColourBoxes">
-                {this.state.boxColours.map((box) => <Box colour={box} onClick={() => this.newColour(box)} />)}
+                {this.state.boxColours.map((box, index) => <Box colour={box} onClick={() => this.newColour(box, index)} />)}
             </div>
         )
     }
