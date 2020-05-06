@@ -26,12 +26,12 @@ class ColourBoxes extends Component {
     }
     newColour(oldColour, idx) {
         const idxOldColour = this.props.colours.indexOf(oldColour)
-        const colourSelect = [...this.props.colours].splice(idxOldColour, 1)
+        const colourSelect = [...this.props.colours]
+        colourSelect.splice(idxOldColour, 1)
         const newColour = colourSelect[Math.floor(Math.random() * colourSelect.length)]
         const newSet = [...this.state.boxColours]
         newSet[idx] = newColour
         this.setState(st => { return { boxColours: newSet } })
-        console.log('working')
     }
 
 
