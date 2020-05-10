@@ -1,0 +1,32 @@
+##Part One: Add A Key (completed with uuid)
+Currently, the buttons don’t have a key prop. Fix this issue!
+
+##Part Two: Number of Wrong Guesses (completed - added a h2 and shows wrong guesses stored in state)
+Above the currently-guessed word, we’d like to show the number of wrong guesses, like “Number wrong: 3.” Add this.
+
+##Part Three: End Game on Loss (completed - broken down into functions so that the game has a 'playing' screen and an 'endGame' screen. This is a little cleaner as it shows when the user's game is over with the option to start a new game. It also shows the word)
+The game only comes (by default) with 6 gallows images and therefore should only allow six wrong guesses. However, it allows players to keep making guesses after this (and there’s a bug, in that the gallows images disappears after there are too many wrong).
+
+Change the behavior of the game so that after six wrong guesses, it no longer shows the button area. Instead, it should show the message “You lose” and reveal the correct word.
+
+Do this without hard-coding “6” in as the number of guesses — instead, use the prop for maxGuesses.
+
+##Part Four: Alt Text (completed - used state to add alt text)
+Add an alt attribute to the hangman image that explains how many guesses have been made, inc case the images don’t load. Something like “5/6” or “5 wrong guesses”
+
+##Part Five: Use a Random Word (completed - there was already a function in the doc - just imported and added as the answer)
+The game right now always uses the word “apple” as the secret word. There’s a file, words.js, with a list of words and a function to return a random word. Incorporate this so that the game uses this to choose a secret word.
+
+##Part Six: Add “Restart” Button (completed - just setState so that there is a new game and guesses are set to 0 + create new Set())
+Add a button that will restart the game. This should pick a new random word and reset the guessed list and number of wrong guesses.
+
+Further Study
+Imagine that other games use a sequence of buttons with letters on them. It would be nice if the buttons could be reusable components.
+
+Refactor the app, adding an AlphaButtons component.
+
+The AlphaButtons component renders a sequence of buttons corresponding to letters (in Hangman that would be “a” through “z”). The Hangman component should keep track of which letters have been guessed.
+
+Additional Ideas
+Add a message if the player wins (guesses all the letters)
+Add more CSS styling
