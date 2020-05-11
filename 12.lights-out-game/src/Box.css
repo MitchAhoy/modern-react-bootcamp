@@ -1,0 +1,14 @@
+.Box {
+    width: 19vw;
+    height:19vh;;
+}
+
+.Box-light {
+    background: white;
+    border: 1px blueviolet solid;
+
+}
+.Box-dark {
+    background: rgb(41, 41, 41);
+    border: 1px blueviolet solid;
+}
