@@ -1,13 +1,14 @@
 import React from 'react';
 import NewBoxForm from './NewBoxForm'
 import BoxList from './BoxList'
+import Box from './Box'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <NewBoxForm />
       <BoxList />
+    
     </div>
   );
 }

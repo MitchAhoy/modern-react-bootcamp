@@ -1,12 +1,20 @@
 import React from 'react';
 
 
-function Box() {
+function Box(props) {
   return (
-    <div className="Box">
+    <div>
+    <div
+      style={{
+        height: `${props.height}em`,
+        width: `${props.width}em`,
+        backgroundColor: props.colour
+      }}
+    />
+    <button onClick={props.removeBox}>X</button>
+  </div>
+  )
+    }
 
-    </div>
-  );
-}
-
-export default Box;
+    
+export default Box
