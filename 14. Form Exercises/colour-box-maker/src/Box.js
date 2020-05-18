@@ -6,8 +6,8 @@ function Box(props) {
     <div>
     <div
       style={{
-        height: `${props.height}em`,
-        width: `${props.width}em`,
+        height: `${props.height}rem`,
+        width: `${props.width}rem`,
         backgroundColor: props.colour
       }}
     />

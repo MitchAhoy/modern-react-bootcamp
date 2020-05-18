@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import uuid from 'uuid/v4'
 
 
 function NewBoxForm(props) {
@@ -12,12 +13,12 @@ function NewBoxForm(props) {
 
   const handleSubmit = evt => {
     evt.preventDefault()
-    console.log(newBox)
-    props.createBox(newBox)
+    const completeBox = {...newBox, id: uuid()}
+    props.createBox(completeBox)
     setNewBox({})
   }
 
-
+  console.log(newBox)
 
 
   return (
