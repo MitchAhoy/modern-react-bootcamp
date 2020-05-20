@@ -3,12 +3,12 @@ import './Todo.css';
 
 function Todo(props) {
 
+    const [todoInfo, setTodoInfo] = useState(props.task)
     const [isEditing, setIsEditing] = useState(false)
+
 
     const handleEdit = evt => {
         setIsEditing(!isEditing)
-        
-        
     }
 
     const handleRemove = evt => {
@@ -17,8 +17,16 @@ function Todo(props) {
 
     const handleTaskEdit = evt => {
         evt.preventDefault()
-        props.editTodo(props.id)
+        props.editTodo(todoInfo, props.id)
         setIsEditing(!isEditing)
+    }
+
+    const handleChangeEdit = evt => {
+        setTodoInfo([evt.target.name] = evt.target.value)
+    }
+
+    const handleComplete = () => {
+
     }
 
 
@@ -26,11 +34,12 @@ function Todo(props) {
     if (isEditing) {
         result = (
         <div>
-            <form onSubmit={handleTaskEdit}>
+            <form onSubmit={handleTaskEdit} className="Todo-flex">
                 <input 
                 type="text"
-                value={props.task}
+                value={todoInfo}
                 onChange={handleChangeEdit}
+                name="todo"
                 ></input>
                 <button className="Todo-isEditingButton">✔️</button>
             </form>
@@ -38,14 +47,18 @@ function Todo(props) {
         )
     } else {
         result = (
-        <div className="Todo-flex">
+        <div className={`Todo-flex` }>
+            
+
+            <span className="Todo-name">{props.task}</span>
+
+
             <div>
-                <span className="Todo-name">{props.task}</span>
+                <span className="Todo-edit Todo-modify" onClick={handleEdit} >Edit</span>
+                <span className="Todo-delete Todo-modify" onClick={handleRemove}>Delete</span>
+                <span className="Todo-complete Todo-modify" onClick={handleComplete}>✔</span>
             </div>
-            <div>
-                <span className="Todo-edit Todo-modify" onClick={handleEdit} >Edit </span>
-                <span className="Todo-delete Todo-modify" onClick={handleRemove}>X</span>
-            </div>
+
         </div>
         )
     }

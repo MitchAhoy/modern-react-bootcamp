@@ -8,9 +8,11 @@ function TodoList() {
 
     const [todos, setTodos] = useState([{task: 'clean house', completed: false, id: uuid(), editMode: false}, {task: 'study', completed: false, id: uuid(), editMode: false}])
 
-    const editTodo = id => {
-        const idxToEdit = todos.findIndex(todo => todo.id === id)
-        console.log(idxToEdit)
+    const editTodo = (editedTodo, id) => {
+        const newTodos = [...todos]
+        const idxToEdit = newTodos.findIndex(todo => todo.id === id)
+        newTodos[idxToEdit].task = editedTodo
+        setTodos(newTodos)
     }
 
     const removeTodo = id => {

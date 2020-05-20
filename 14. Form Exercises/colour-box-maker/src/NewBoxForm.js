@@ -18,9 +18,6 @@ function NewBoxForm(props) {
     setNewBox({})
   }
 
-  console.log(newBox)
-
-
   return (
     <form className="NewBoxForm" onSubmit={handleSubmit}>
       <div>
