@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     margin: auto;
-    max-width: 80%;
+    max-width: 400px;
     margin-bottom: 1rem;
     padding: 1rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -12,5 +12,27 @@
     padding: 0.2rem;
     cursor: pointer;
     color: rgb(72, 31, 184);
+}
+
+.Todo-flex {
+    display: flex;
+}
+
+.Todo input {
+    border: none;
+    background: #e6e6e6;
+    margin-left: 0.3rem;
+    border-radius: 5px;
+    padding: 0.3rem;
+}
+
+.Todo button{
+    background: rgb(17, 132, 226);
+    border: none;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    color: #fff;
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+    margin-left: 0.5rem;
 }
 

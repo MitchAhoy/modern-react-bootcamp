@@ -9,13 +9,15 @@ function TodoList() {
     const [todos, setTodos] = useState([{task: 'clean house', completed: false, id: uuid(), editMode: false}, {task: 'study', completed: false, id: uuid(), editMode: false}])
 
     const editTodo = id => {
-        const textToEdit = todos.filter(todo => todo.id === id)
-        console.log(textToEdit)
+        const idxToEdit = todos.findIndex(todo => todo.id === id)
+        console.log(idxToEdit)
     }
 
     const removeTodo = id => {
-        const idxToRemove = todos.indexOf(todo => todo.id === id)
-        console.log(idxToRemove)
+        const idxToRemove = todos.findIndex(todo => todo.id === id)
+        const newTodos = [...todos]
+        newTodos.splice(idxToRemove, 1)
+        setTodos(newTodos) 
     }
 
     const todoList = todos.map(task => <Todo task={task.task} editTodo={editTodo} removeTodo={removeTodo} id={task.id} key={task.id}/>)
