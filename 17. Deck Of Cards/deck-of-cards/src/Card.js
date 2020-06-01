@@ -1,10 +1,17 @@
 import React from 'react';
 import './Card.css';
 
-function Card() {
+function Card(props) {
+
+  const randTransform = () => {
+    return Math.floor(Math.random() * 5)
+  }
+
+  const randRotate = `translate(${Math.random() * 20}px, ${Math.random() * 20}px) rotate(${Math.random() * 20}deg)`
+
   return (
     <div className="Card">
-      <img src="https://deckofcardsapi.com/static/img/2D.png"></img>
+      <img src={props.cardImg} alt={props.cardInfo} style={{ transform: randRotate }}></img>
     </div>
   );
 }
