@@ -1,13 +1,25 @@
 import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
-function NavBar () {
+function NavBar(props) {
+
+  const dogLinks = props.dogs.map(dog =>
+    <li className='nav-item' key={dog.name}>
+      <NavLink exact to={`/dogs/${dog.name}`} activeClassName='active' className='nav-link'>
+        {dog.name}
+      </NavLink>
+    </li>
+  )
+
+
+
   return (
     <div className='NavBar'>
       <div>
         <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
-          <a className='navbar-brand' href='#'>
+          <Link className='navbar-brand' to='/dogs'>
             DogFinder
-          </a>
+          </Link>
           <button
             className='navbar-toggler'
             type='button'
@@ -22,17 +34,12 @@ function NavBar () {
 
           <div className='collapse navbar-collapse' id='navbarSupportedContent'>
             <ul className='navbar-nav mr-auto'>
-              <li className='nav-item active'>
-                <a className='nav-link' href='#'>
-                  Home <span className='sr-only'>(current)</span>
-                </a>
-              </li>
               <li className='nav-item'>
-                <a className='nav-link' href='#'>
-                  Link
-                </a>
+                <NavLink exact to='/dogs' className='nav-link'>
+                  Home
+                </NavLink>
               </li>
-              
+              {dogLinks}
             </ul>
           </div>
         </nav>
