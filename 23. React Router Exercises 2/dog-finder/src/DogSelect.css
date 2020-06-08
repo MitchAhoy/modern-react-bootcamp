@@ -1,0 +1,12 @@
+.DogSelect img, .DogSelect a {
+    max-width: 10rem;
+    border-radius: 50%;
+    display: block;
+    text-align: center;
+}
+
+.card-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+}
