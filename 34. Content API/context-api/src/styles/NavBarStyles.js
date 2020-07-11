@@ -23,7 +23,7 @@ const styles = theme => ({
         borderRadius: theme.shape.borderRadius,
         backgroundColor: fade(theme.palette.common.white, 0.15),
         "&:hover": {
-            backgroundColor:  fade(theme.palette.common.white, 0.25)
+            backgroundColor: fade(theme.palette.common.white, 0.25)
         },
         marginLeft: 0,
         width: '100%',
