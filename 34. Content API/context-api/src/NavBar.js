@@ -26,7 +26,7 @@ const NavBar = props => {
                     <IconButton className={classes.menuButton} color='inherit'>
                         <span>{language.toUpperCase()}</span>
                     </IconButton>
-                    <Switch onChange={toggleTheme} />
+                    <Switch onChange={() => toggleTheme(!isDarkMode)} />
                     <div className={classes.grow} />
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
